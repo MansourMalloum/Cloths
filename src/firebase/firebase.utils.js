@@ -23,6 +23,7 @@ provider.setCustomParameters({
 });
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
+
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -41,8 +42,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log("error while creating user", error.message);
     }
   }
+
   return userRef;
-  // console.log(snapshot);
 };
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
