@@ -31,10 +31,8 @@ const Header = ({ currentUser, cart }) => {
         )}
         <CartIcon />
       </div>
-      {
-
-      }
-      <CartDropdown />
+      {cart? '' :<CartDropdown />}
+      
     </div>
   );
 };
