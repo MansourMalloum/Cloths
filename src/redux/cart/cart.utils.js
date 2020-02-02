@@ -11,7 +11,7 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
         : cartItem;
     });
   }
-    console.log(cartItems);
+   
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
