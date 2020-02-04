@@ -34,7 +34,7 @@ const CheckoutPage = ({ cartItems, total }) => {
       {cartItems.map(cartItem => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <div className='total'>TOTAL: $ {total}</div>
+      <div className='total'>TOTAL: {total} FCFA</div>
       <h3 className='test-warning'>
         Please use This creadentials:
         <br />
