@@ -3,7 +3,7 @@ import './collection-item.component.scss';
 import CustomButton from '../custom-button/custom-button.component';
 import { connect } from 'react-redux';
 import { addItem } from  '../../redux/cart/cart.action';
-
+import { toggleCartHidden } from '../../redux/cart/cart.action';
 const CollectionItem = ({ item, setItem }) => {
   const {  name, price, imageUrl } = item;
   return (
@@ -21,6 +21,9 @@ const CollectionItem = ({ item, setItem }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  setItem: (item) => dispatch(addItem(item))
+  setItem: (item) => {
+    dispatch(addItem(item));
+    dispatch(toggleCartHidden())
+  }
 });
 export default connect(null, mapDispatchToProps)(CollectionItem);
